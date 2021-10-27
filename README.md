@@ -3,7 +3,7 @@ A simple GitHub Action for producing Jekyll build artifacts compatible with GitH
 
 # Usage
 
-## Build with Jekyll 4 and deploy to GitHub Pages
+## Build with Pages-gem and deploy to GitHub Pages
 
 ```yaml
 jobs:
@@ -13,6 +13,9 @@ jobs:
     steps:
       - name: Build page with Jekyll
         uses: actions/pages-jekyll@v4
+        with:
+          source: ./source_dir
+          destination: ./source_dir/_site
   deploy-to-pages:
     runs-on: ubuntu-latest
     name: Deploy to Pages
@@ -28,14 +31,3 @@ jobs:
           artifact-name: github-pages
 ```
 
-## Build with Jekyll 3
-
-```yaml
-jobs:
-  build-pages:
-    runs-on: ubuntu-latest
-    name: Build Pages with Jekyll
-    steps:
-      - name: Build page with Jekyll
-        uses: actions/pages-jekyll@v3
-```
