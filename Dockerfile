@@ -1,4 +1,5 @@
-FROM jekyll/jekyll:4
+# TODO: Replace this with (when available)
+# FROM ghcr.io/github/pages-gem:latest
+FROM ghcr.io/jriggins/pages-gem:latest
 
-ENV JEKYLL_DATA_DIR=/github/workspace
-CMD ["/usr/jekyll/bin/entrypoint", "jekyll", "build"]
+CMD ["jekyll", "build"]
